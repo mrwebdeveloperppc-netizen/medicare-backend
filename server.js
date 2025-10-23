@@ -10,7 +10,10 @@ app.get("/", (req, res) => {
   res.json({ message: "Medicare API is running 🚀" });
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
+// ✅ Railway automatically provides the port in process.env.PORT
+const PORT = process.env.PORT || 8080;
+
+// ✅ "0.0.0.0" allows external access (required for Railway)
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`✅ Server running on port ${PORT}`);
 });
