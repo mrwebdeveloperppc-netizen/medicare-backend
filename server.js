@@ -19,32 +19,29 @@ app.get("/api/v1/get_configurations", (req, res) => {
     logo: "https://admin.smarttimely.com/assets/logo.png",
     currency: "USD",
     currencySymbol: "$",
-    timezone: "UTC",
-    locale: "en",
-    
+
+    // ✅ Payment Config Safe Defaults
     paymentGateway: "none",
+    paymentGateways: [], // ✅ IMPORTANT — prevents admin crash
+
     razorpayKey: "",
     razorpaySecret: "",
+
     stripePublicKey: "",
     stripeSecret: "",
+
     paypalClientId: "",
     paypalSecret: "",
+
     flutterwaveKey: "",
     flutterwaveSecret: "",
 
-    enableSubscriptions: false,
-    enableEmail: false,
-    enableSMS: false,
-    smtpHost: "",
-    smtpPort: "",
-    smtpUser: "",
-    smtpPass: "",
-
     version: "1.0.0",
     environment: "production",
-    apiStatus: "Running ✅"
+    apiStatus: "Running ✅",
   });
 });
+
 
 
 
