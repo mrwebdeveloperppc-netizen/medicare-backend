@@ -20,27 +20,23 @@ app.get("/api/v1/get_configurations", (req, res) => {
     currency: "USD",
     currencySymbol: "$",
 
-    // ✅ Payment Config Safe Defaults
-    paymentGateway: "none",
-    paymentGateways: [], // ✅ IMPORTANT — prevents admin crash
-
-    razorpayKey: "",
-    razorpaySecret: "",
-
-    stripePublicKey: "",
-    stripeSecret: "",
-
-    paypalClientId: "",
-    paypalSecret: "",
-
-    flutterwaveKey: "",
-    flutterwaveSecret: "",
+    paymentGateway: "none",        // ✅ Force disable
+    paymentGateways: [],           // ✅ Required for admin
+    razorpayKey: null,
+    razorpaySecret: null,
+    stripePublicKey: null,
+    stripeSecret: null,
+    paypalClientId: null,
+    paypalSecret: null,
+    flutterwaveKey: null,
+    flutterwaveSecret: null,
 
     version: "1.0.0",
     environment: "production",
     apiStatus: "Running ✅",
   });
 });
+
 
 
 
