@@ -18,14 +18,18 @@ app.get("/api/v1/get_configurations", (req, res) => {
     siteName: "SmartTimely",
     logo: "https://admin.smarttimely.com/assets/logo.png",
     currency: "USD",
-    paymentGateway: "Razorpay", // ✅ NOT None
-    razorpayKey: "rzp_test_123", // ✅ Dummy so frontend doesn't crash
-    stripePublicKey: "", // leave empty if not using Stripe
+
+    // ✅ FORCE payment system values to avoid crash
+    paymentGateway: "Razorpay",
+    razorpayKey: "rzp_test_123456789", // Dummy test key
+    stripePublicKey: "",
+
     version: "1.0.0",
     environment: "production",
     apiStatus: "Running ✅",
   });
 });
+
 
 
 
