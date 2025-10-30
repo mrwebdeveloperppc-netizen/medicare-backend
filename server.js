@@ -12,6 +12,7 @@ app.get("/", (req, res) => {
 });
 
 // Config route for frontend
+// Config route for frontend
 app.get("/api/v1/get_configurations", (req, res) => {
   res.json({
     success: true,
@@ -19,10 +20,21 @@ app.get("/api/v1/get_configurations", (req, res) => {
     logo: "https://admin.smarttimely.com/assets/logo.png",
     currency: "USD",
 
-    // ✅ FORCE payment system values to avoid crash
+    // ✅ Payment config
     paymentGateway: "Razorpay",
     razorpayKey: "rzp_test_123456789", // Dummy test key
     stripePublicKey: "",
+
+    // ✅ Firebase config to prevent React crash
+    firebaseConfig: {
+      apiKey: "dummy",
+      authDomain: "dummy",
+      projectId: "dummy",
+      storageBucket: "dummy",
+      messagingSenderId: "dummy",
+      appId: "dummy",
+      measurementId: "dummy",
+    },
 
     version: "1.0.0",
     environment: "production",
